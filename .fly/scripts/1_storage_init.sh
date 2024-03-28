@@ -4,7 +4,13 @@ if [ ! -d "$FOLDER" ]; then
     cp -r /var/www/html/storage_/. /var/www/html/storage
     echo "deleting storage_..."
     rm -rf /var/www/html/storage_
+
 fi
+
+mdkir -p $FOLDER/framework
+mdkir -p $FOLDER/framework/sessions
+mdkir -p $FOLDER/framework/views
+mdkir -p $FOLDER/framework/cache
 
 # .fly/scripts/1_storage_init.sh
 
