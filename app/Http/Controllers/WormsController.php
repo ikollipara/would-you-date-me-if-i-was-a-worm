@@ -16,8 +16,10 @@ class WormsController extends Controller
     public function store(WormRequest $request)
     {
         $worm = new Worm($request->except('avatar'));
-        if($path = $request->file('avatar')->store('avatars', 'public')) {
-            $worm->avatar_url = $path;
+        if($request->file('avatar')) {
+            if($path = $request->file('avatar')->store('avatars', 'public')) {
+                $worm->avatar_url = $path;
+            }
         }
         if($worm->save()) {
             return redirect()->route('worms.show', $worm);

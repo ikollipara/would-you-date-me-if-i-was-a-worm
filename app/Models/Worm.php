@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * \App\Models\Worm
@@ -55,7 +56,7 @@ class Worm extends Model
     protected function avatarUrl(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => $value === '' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Regenwurm1.jpg/300px-Regenwurm1.jpg' : $value,
+            get: fn($value) => $value === '' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Regenwurm1.jpg/300px-Regenwurm1.jpg' : Storage::url($value),
         );
     }
 
