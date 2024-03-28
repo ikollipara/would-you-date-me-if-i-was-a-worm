@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
  * @property int $id
  * @property string $name
  * @property string $species
- * @property int $age
+ * @property float $age
  * @property int $number_of_segments
  * @property int $number_of_hearts
  * @property string $about_me
@@ -46,12 +46,19 @@ class Worm extends Model
     ];
 
     protected $casts = [
-        'age' => 'int',
+        'age' => 'float',
         'number_of_segments' => 'int',
         'number_of_hearts' => 'int',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
+
+    protected function age(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => $value == 0 ? floatval($this->age_in_days) : $value,
+        );
+    }
 
     protected function avatarUrl(): Attribute
     {

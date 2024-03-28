@@ -16,7 +16,7 @@ class WormRequest extends FormRequest
         return [
             'name' => 'required|string',
             'species' => 'required|string',
-            'age' => 'required|integer|min:1',
+            'age' => 'required|numeric|min:1',
             'number_of_segments' => 'required|integer|min:1',
             'number_of_hearts' => 'required|integer|min:5|max:5',
             'about_me' => 'required|string',
