@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', fn() => Inertia::render('Home'))->name('home');
-Route::resource('worms', WormsController::class)->except(['index', 'destroy']);
+Route::resource('worms', WormsController::class)->except(['index', 'destroy', 'edit', 'update']);
 Route::resource('worms.matches', WormMatchesController::class)->only(['index', 'store']);

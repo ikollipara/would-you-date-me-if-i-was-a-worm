@@ -32,21 +32,4 @@ class WormsController extends Controller
             'worm' => $worm
         ]);
     }
-
-    public function edit(Worm $worm)
-    {
-        return view('worms.edit', [
-            'worm' => $worm
-        ]);
-    }
-
-    public function update(WormRequest $request, Worm $worm)
-    {
-        $validated = $request->validate();
-        if($worm->update($validated)) {
-            return redirect()->route('worms.show', $worm);
-        } else {
-            return redirect()->back()->withErrors('Unable to update worm.');
-        }
-    }
 }
