@@ -1,4 +1,6 @@
-<x-layouts.app>
+<script setup></script>
+
+<template>
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content text-center">
     <div class="max-w-2xl">
@@ -9,8 +11,8 @@
         <br>
       Join us and discover the joy of finding your perfect match, no matter how wiggly or wonderful they may be!
       </p>
-      <a href="{{ route('sign-up') }}" class="btn btn-primary text-2xl">Get Started</a>
+      <a :href="route('worms.create')" class="btn btn-primary text-2xl">Get Started</a>
     </div>
   </div>
 </div>
-</x-layouts.app>
+</template>
