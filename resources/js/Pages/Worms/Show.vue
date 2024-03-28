@@ -15,7 +15,7 @@ defineProps({
             <img :src="worm.avatar_url"
                 class="max-w-sm rounded-lg shadow-2xl" />
             <div>
-                <h1 class="text-5xl font-bold">{{ worm.name }} - {{ worm.species }}</h1>
+                <h1 class="text-5xl font-bold">{{ worm.name }} - <span class="italic">{{ worm.species }}</span></h1>
                 <ul class=" list-inside list-disc">
                     <li>Age: {{ worm.age }}</li>
                     <li>Number of Segments: {{ worm.number_of_segments }}</li>

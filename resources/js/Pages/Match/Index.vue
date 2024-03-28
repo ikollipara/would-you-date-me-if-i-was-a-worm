@@ -45,7 +45,7 @@ function slither() {
                 <img :src="match.avatar_url" alt="Shoes" class="rounded-xl" />
             </figure>
             <div class="card-body items-center text-center">
-                <h2 class="card-title">{{ match.name }} - {{ match.species }}</h2>
+                <h2 class="card-title">{{ match.name }} - <span class="italic">{{ match.species }}</span></h2>
                 <ul class=" list-inside list-disc">
                     <li>Age: {{ match.age }}</li>
                     <li>Number of Segments: {{ match.number_of_segments }}</li>
